@@ -35,7 +35,6 @@ func (a *app) Atos(ctx context.Context, appleMusicUrl string) ([]string, error) 
 		return nil, errors.New("apple music url is required")
 	}
 
-	log.Printf("apple music url: %s", appleMusicUrl)
 	aurl, err := url.Parse(appleMusicUrl)
 	if err != nil {
 		return nil, err
@@ -95,6 +94,8 @@ func (a *app) OnMessageCreate(s disgord.Session, m *disgord.MessageCreate) {
 		matches   = urlRe.FindAllString(content, -1)
 		madChange = false
 	)
+
+	log.Printf("apple url detected message='%v' user=%v\n", content, m.Message.Author.Username)
 
 	for _, match := range matches {
 		spotify, err := a.Atos(ctx, match)

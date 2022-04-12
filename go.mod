@@ -7,7 +7,7 @@ require (
 	github.com/andersfylling/disgord v0.35.1
 	github.com/zmb3/spotify v1.3.0
 	github.com/zmb3/spotify/v2 v2.0.1
-	golang.org/x/oauth2 v0.0.0-20210810183815-faf39c7919d5
+	golang.org/x/oauth2 v0.0.0-20220411215720-9780585627b5
 )
 
 require (
